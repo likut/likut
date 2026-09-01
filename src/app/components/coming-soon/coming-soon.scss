@@ -1,0 +1,488 @@
+/* =========================================================
+   LIKUT - Coming Soon Website
+   Fonts: Cormorant Garamond + DM Sans
+   Palette:
+   Cream  #F3EFE6
+   Green  #173B2A
+   Ochre  #C99B50
+   Ink    #151918
+   ========================================================= */
+
+$cream: #F3EFE6;
+$green: #173B2A;
+$gold: #C99B50;
+$ink: #151918;
+$white: #fff;
+
+$serif: "Cormorant Garamond", Georgia, serif;
+$sans: "DM Sans", Arial, sans-serif;
+
+$max-width: 1180px;
+$mobile: 760px;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:host {
+  margin: 0;
+  color: $green;
+  font-family: $sans;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+main {
+  background: $cream;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.shell {
+  width: min(calc(100% - 96px), $max-width);
+  margin-inline: auto;
+
+  @media (max-width: $mobile) {
+    width: min(calc(100% - 48px), $max-width);
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Brand */
+
+.wordmark {
+  display: inline-block;
+  font-family: $serif;
+  font-size: 54px;
+  font-weight: 500;
+  line-height: .86;
+  letter-spacing: .055em;
+  text-decoration: none;
+
+  &--small {
+    font-size: 2.25rem;
+  }
+
+  &--footer {
+    color: $cream;
+    font-size: 2.3rem;
+  }
+}
+
+.tagline {
+  margin: 14px 0 0;
+  font-size: 1.05rem;
+  letter-spacing: .01em;
+}
+
+.brand-dot {
+  width: 73px;
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: $gold;
+
+  @media (max-width: $mobile) {
+    width: 48px;
+  }
+}
+
+.gold-rule {
+  display: block;
+  width: 84px;
+  height: 1px;
+  margin: 38px auto;
+  background: $gold;
+
+  &--left {
+    margin: 30px 0;
+    width: 64px;
+  }
+}
+
+/* Home */
+
+.hero {
+  min-height: 820px;
+  padding: 70px 0 74px;
+
+  &__shell {
+    display: flex;
+    min-height: 680px;
+    flex-direction: column;
+  }
+
+  &__content {
+    width: min(100%, 900px);
+    margin: auto;
+    padding-top: 70px;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0;
+    font-family: $serif;
+    font-size: 81px;
+    font-weight: 500;
+    line-height: .95;
+    letter-spacing: -.025em;
+  }
+
+  &__support {
+    margin: 0;
+    font-size: 1.12rem;
+    letter-spacing: .005em;
+  }
+
+  @media (max-width: $mobile) {
+    min-height: auto;
+    padding: 38px 0 56px;
+
+    &__shell {
+      min-height: auto;
+    }
+
+    &__content {
+      padding-top: 110px;
+    }
+
+    h1 {
+      font-size: clamp(3.1rem, 14vw, 4.6rem);
+      line-height: .93;
+    }
+  }
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.coming-soon {
+  margin: 66px 0 34px;
+  font-size: .95rem;
+  font-weight: 500;
+  letter-spacing: .36em;
+}
+
+.signup {
+  width: min(100%, 680px);
+  margin: 0 auto;
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+
+  input {
+    min-width: 0;
+    height: 68px;
+    padding: 0 24px;
+    border: 1px solid rgba($green, .8);
+    border-right: 0;
+    border-radius: 0;
+    outline: none;
+    color: $green;
+    background: transparent;
+
+    &::placeholder {
+      color: rgba($green, .75);
+      opacity: 1;
+    }
+
+    &:focus-visible {
+      box-shadow: inset 0 0 0 2px $gold;
+    }
+  }
+
+  button {
+    min-width: 224px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 0 25px;
+    border: 1px solid $green;
+    border-radius: 0;
+    background: $green;
+    color: $cream;
+    font-weight: 500;
+    transition: opacity 160ms ease;
+
+    &:hover {
+      opacity: .92;
+    }
+
+    &:focus-visible {
+      outline: 3px solid $gold;
+      outline-offset: 3px;
+    }
+  }
+
+  &__legal {
+    max-width: 650px;
+    margin: 30px auto 0;
+    font-size: .78rem;
+    line-height: 1.7;
+    color: rgba($green, .88);
+
+    a {
+      text-underline-offset: 3px;
+    }
+  }
+
+  &__message {
+    min-height: 1.5em;
+    margin: 14px 0 0;
+    font-size: .88rem;
+  }
+
+  @media (max-width: $mobile) {
+    &__row {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    input,
+    button {
+      width: 100%;
+      min-width: 0;
+      height: 60px;
+      border: 1px solid $green;
+    }
+
+    &__legal {
+      font-size: .78rem;
+    }
+  }
+}
+
+.closing {
+  overflow: hidden;
+  padding-top: 10px;
+
+  &__shape {
+    width: 80rem;
+    height: 40rem;
+    margin: 0 auto -160px;
+    padding: 130px 40px 210px;
+    border-radius: 40rem 40rem 0 0;
+    background: #173B2A;
+    color: #F3EFE6;
+    text-align: center;
+  }
+
+  &__dot {
+    display: block;
+    width: 22px;
+    aspect-ratio: 1;
+    margin: 0 auto 40px;
+    border-radius: 50%;
+    background: $gold;
+  }
+
+  &__statement {
+    margin: 0;
+    font-family: $serif;
+    font-size: clamp(2.4rem, 4.2vw, 4rem);
+    font-weight: 400;
+    line-height: 1.02;
+  }
+
+  &__rule {
+    display: block;
+    width: 66px;
+    height: 1px;
+    margin: 36px auto 58px;
+    background: $gold;
+  }
+
+  @media (max-width: $mobile) {
+    &__shape {
+      width: 145vw;
+      min-height: 450px;
+      margin-left: 50%;
+      margin-bottom: -125px;
+      padding: 110px calc((145vw - 100vw) / 2 + 24px) 190px;
+      transform: translateX(-50%);
+      border-radius: 50% 50% 0 0 / 48% 48% 0 0;
+    }
+
+    &__statement {
+      font-size: 2.8rem;
+    }
+  }
+}
+
+.site-footer {
+  font-size: .78rem;
+
+  p {
+    margin: 0;
+  }
+
+  span {
+    margin-inline: 10px;
+    color: $gold;
+  }
+}
+
+/* Privacy */
+
+.legal-header {
+  border-bottom: 1px solid rgba($gold, .45);
+
+  &__inner {
+    min-height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.legal-nav {
+  display: flex;
+  gap: 34px;
+  font-size: .86rem;
+
+  a {
+    padding: 12px 0 8px;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    &[aria-current="page"] {
+      border-color: $gold;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    gap: 18px;
+    font-size: .78rem;
+  }
+}
+
+.legal-main {
+  padding: 72px 0 120px;
+
+  @media (max-width: $mobile) {
+    padding: 54px 0 80px;
+  }
+}
+
+.legal-copy {
+  max-width: 880px;
+
+  h1 {
+    margin: 0 0 10px;
+    font-family: $serif;
+    font-size: clamp(3.5rem, 6vw, 5.6rem);
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  &__updated {
+    margin: 0 0 45px;
+    font-size: .9rem;
+  }
+
+  section {
+    margin: 0 0 24px;
+  }
+
+  h2 {
+    margin: 0 0 12px;
+    font-family: $sans;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0 0 18px;
+    color: $ink;
+    font-size: 1rem;
+    line-height: 1.78;
+  }
+
+  a {
+    color: $green;
+    font-weight: 600;
+    text-underline-offset: 3px;
+  }
+}
+
+.legal-contact {
+  p {
+    color: $ink;
+  }
+}
+
+.legal-footer {
+  background: $green;
+  color: $cream;
+
+  &__inner {
+    min-height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  p {
+    margin: 0;
+    font-size: .78rem;
+  }
+
+  span {
+    margin-inline: 10px;
+    color: $gold;
+  }
+
+  @media (max-width: $mobile) {
+    &__inner {
+      min-height: 130px;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
